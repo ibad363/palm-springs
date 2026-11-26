@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   Trees,
 } from "lucide-react";
-import { AeoGeoDrawer } from "@/components/AeoGeoDrawer";
 import { MobileNav } from "@/components/MobileNav";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
 import { PhaseTwoInquiryForm } from "@/components/PhaseTwoInquiryForm";
@@ -32,7 +31,6 @@ import {
 export default function PalmSpringsPage() {
   const jsonLd = buildPalmSpringsJsonLd();
   const safeJsonLd = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
-  const prettyJsonLd = JSON.stringify(jsonLd, null, 2);
 
   const canyonPark = MASTERPLAN_AMENITIES.find((a) => a.id === "canyon-park");
   const countryClub = MASTERPLAN_AMENITIES.find((a) => a.id === "thousand-palms");
@@ -565,7 +563,7 @@ export default function PalmSpringsPage() {
           <div className="mx-auto max-w-[56rem] px-[1rem] sm:px-[1.5rem] lg:px-[2rem]">
             <div className="text-center">
               <span className="text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-[#2d4a3e]">
-                Answer Engine &amp; Buyer Q&amp;A
+                Buyer Information &amp; Q&amp;A
               </span>
               <h2
                 id="faq-heading"
@@ -574,8 +572,8 @@ export default function PalmSpringsPage() {
                 Frequently Asked Questions
               </h2>
               <p className="mt-[0.75rem] text-[0.875rem] text-[#5c554e] sm:text-[1rem]">
-                Direct answers about Palm Springs by Nakheel—synced 1:1 with
-                embedded FAQPage JSON-LD structured data.
+                Key facts about Palm Springs by Nakheel—from location and unit
+                sizes to payment plans and handover.
               </p>
             </div>
 
@@ -608,25 +606,25 @@ export default function PalmSpringsPage() {
               Palm Springs by Nakheel — Dubai
             </div>
             <p className="mt-[0.25rem] text-[0.75rem] leading-relaxed text-[#5c554e]">
-              Structured project guide built with Next.js, Schema.org JSON-LD, and{" "}
-              <code className="font-mono">/llms.txt</code>. Figures reflect publicly
-              reported November 2026 Phase 1 launch details.
+              Residential project overview for Palm Springs in Hessyan First,
+              Dubai. Specifications and Phase 1 launch figures reflect publicly
+              reported November 2026 details and are subject to developer updates.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-[0.75rem] text-[0.75rem] font-medium text-[#5c554e]">
-            <a href="/llms.txt" className="font-mono underline hover:text-[#1b1917]">
-              /llms.txt
+          <div className="flex flex-wrap items-center gap-[1rem] text-[0.75rem] font-medium text-[#5c554e] sm:pr-[7.5rem]">
+            <a href="#residences" className="hover:text-[#1b1917]">
+              Residences
             </a>
-            <span>·</span>
-            <a href="/sitemap.xml" className="font-mono underline hover:text-[#1b1917]">
-              /sitemap.xml
+            <a href="#masterplan" className="hover:text-[#1b1917]">
+              Masterplan
             </a>
-            <span>·</span>
-            <a href="/robots.txt" className="font-mono underline hover:text-[#1b1917]">
-              /robots.txt
+            <a href="#payment-plan" className="hover:text-[#1b1917]">
+              Payment Plan
             </a>
-            <AeoGeoDrawer jsonLdString={prettyJsonLd} />
+            <a href="#faq-section" className="hover:text-[#1b1917]">
+              FAQ
+            </a>
           </div>
         </div>
       </footer>
